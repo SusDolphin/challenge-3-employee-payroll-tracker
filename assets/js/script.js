@@ -14,16 +14,13 @@ const collectEmployees = function () {
     const lastName = prompt("What is the last name of the employee?");
     const salary = prompt("What is the salary of the employee?");
 
-    console.log(`firstName: ${firstName}
-    lastName: ${lastName}
-    salary: ${salary}
-    `);
-
     const newEmployee = {
-      firstName, //firstName:firstName
-      lastName,
-      salary
+      firstName: firstName, //firstName:firstName
+      lastName: lastName,
+      salary: parseFloat(salary)
     }
+
+    console.log(newEmployee)
 
     employees.push(newEmployee);
 
@@ -47,7 +44,7 @@ const displayAverageSalary = function (employeesArray) {
 
   let totalSalary = 0;
   for (let i = 0; i < employeesArray.length; i++) {
-    totalSalary = + parseFloat(employeesArray[i].salary);
+    totalSalary += parseFloat(employeesArray[i].salary);
   }
 
   const averageSalary = totalSalary / employeesArray.length;
